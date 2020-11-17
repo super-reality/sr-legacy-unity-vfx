@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4760714430261956787}
   - component: {fileID: -762480449590611462}
   m_Layer: 0
-  m_Name: EffectManager
+  m_Name: OverlayManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace SuperReality.Scripts
 {
-    public class EffectManager : MonoBehaviour
+    public class OverlayManager : MonoBehaviour
     {
         #region Fields
 
@@ -13,23 +13,23 @@ namespace SuperReality.Scripts
         [SerializeField]
         private UnityEvent onStop;
 
-        private bool _isPlaying;
+        private bool m_isPlaying;
 
         #endregion
 
         #region Methods
 
-        public void StartEffect()
+        public void StartOverlay()
         {
-            if (_isPlaying) return;
-            _isPlaying = true;
+            if (m_isPlaying) return;
+            m_isPlaying = true;
             onStart.Invoke();
         }
 
-        public void StopEffect()
+        public void StopOverlay()
         {
-            if (!_isPlaying) return;
-            _isPlaying = false;
+            if (!m_isPlaying) return;
+            m_isPlaying = false;
             onStop.Invoke();
         }
 
