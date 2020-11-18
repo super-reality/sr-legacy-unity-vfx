@@ -1,78 +1,90 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace SuperReality.Scripts.Editor
 {
     public class BuildTools
     {
-        [MenuItem("Super Reality/Build Selected Scenes")]
+        [MenuItem("Super Reality/Build Selected Overlays")]
         public static void BuildSelectedScenes()
         {
             var selection = Selection.objects;
-            var scenes = new List<Scene>();
+            var overlays = new List<OverlayData>();
 
             foreach(var item in selection)
             {
-                if (item is SceneAsset)
+                if (item is OverlayData overlay)
                 {
-                    var sceneAsset = item as SceneAsset;
-                    var scene = SceneManager.GetSceneByName(sceneAsset.name);
-                    if (scene.buildIndex >= 0)
-                    {
-                        scenes.Add(scene);
-                    }
-                    else
-                    {
-                        Debug.LogError($"The selected scene '{sceneAsset.name}' is not in the build. Add it in the build settings, then run this again.");
-                    }
+                    overlays.Add(overlay);
                 }
             }
 
-            if (scenes.Count > 0)
+            if (overlays.Count > 0)
             {
-                Debug.Log($"Selected {scenes.Count} {(scenes.Count == 1 ? "scene" : "scenes")} to build");
-
-                for (var i = 0; i < scenes.Count; i++)
+                Debug.Log($"Selected {overlays.Count} {(overlays.Count == 1 ? "overlay" : "overlays")} to build");
+                foreach (var overlay in overlays)
                 {
-                    var scene = scenes[i];
-
-                    var buildPlayerOptions = new BuildPlayerOptions
+                    if (!BuildOverlay(overlay))
                     {
-                        scenes = new[] { scene.path },
-                        locationPathName = "Builds/" + scene.name,
-                        target = BuildTarget.WebGL,
-                        options = BuildOptions.None
-                    };
-
-                    Debug.Log($"Building scene '{scene.name}' ({i + 1}/{scenes.Count})...");
-
-                    var report = BuildPipeline.BuildPlayer(buildPlayerOptions);
-                    var summary = report.summary;
-
-                    if (summary.result == BuildResult.Succeeded)
-                    {
-                        Debug.Log($"Built scene '{scene.name}' successfully");
-                    }
-
-                    if (summary.result == BuildResult.Failed)
-                    {
-                        Debug.LogError($"Failed to build scene '{scene.name}'");
-                    }
-
-                    if (summary.result == BuildResult.Cancelled)
-                    {
-                        Debug.LogWarning("Cancelled building scene '{scene.name}'");
                         break;
                     }
                 }
             }
             else
             {
-                Debug.LogWarning("No scenes to build. Check your selection.");
+                Debug.LogWarning("No overlays to build");
             }
+        }
+
+        private static bool BuildOverlay(OverlayData overlay)
+        {
+            Debug.Log($"Building overlay '{overlay.displayName}'");
+
+            var buildPath = Path.Combine("Builds", overlay.buildName);
+
+            var buildPlayerOptions = new BuildPlayerOptions
+            {
+                scenes = new string[overlay.scenes.Count],
+                locationPathName = buildPath,
+                target = BuildTarget.WebGL,
+                options = BuildOptions.None
+            };
+
+            for (var i = 0; i < overlay.scenes.Count; i++)
+            {
+                buildPlayerOptions.scenes[i] = overlay.scenes[i].ScenePath;
+            }
+
+            var report = BuildPipeline.BuildPlayer(buildPlayerOptions);
+            var summary = report.summary;
+            var success = false;
+
+            if (summary.result == BuildResult.Succeeded)
+            {
+                Debug.Log($"Successfully built overlay '{overlay.displayName}'");
+
+                using (var streamWriter = File.CreateText(Path.Combine(buildPath, "data.json")))
+                {
+                    streamWriter.Write(overlay.GetJson());
+                }
+
+                success = true;
+            }
+
+            if (summary.result == BuildResult.Failed)
+            {
+                Debug.LogError($"Failed to build overlay '{overlay.displayName}'");
+            }
+
+            if (summary.result == BuildResult.Cancelled)
+            {
+                Debug.LogWarning($"Cancelled building overlay '{overlay.displayName}'");
+            }
+
+            return success;
         }
     }
 }

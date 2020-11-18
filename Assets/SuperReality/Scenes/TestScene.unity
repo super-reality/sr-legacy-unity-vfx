@@ -4945,7 +4945,7 @@ PrefabInstance:
     - target: {fileID: 1836261338617022955, guid: c24a8083c5352314e94df8995ee4b974,
         type: 3}
       propertyPath: m_Name
-      value: EffectManager
+      value: OverlayManager
       objectReference: {fileID: 0}
     - target: {fileID: 4760714430261956787, guid: c24a8083c5352314e94df8995ee4b974,
         type: 3}
