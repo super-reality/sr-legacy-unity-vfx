@@ -1,6 +1,6 @@
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "Transparent/Particles (Alpha Blended)"
+Shader "Super Reality/Overlays/Particles (Alpha Blended)"
 {
 	Properties
 	{
@@ -130,7 +130,7 @@ Shader "Transparent/Particles (Alpha Blended)"
 }
 /*ASEBEGIN
 Version=18703
-52.66667;248.6667;1350;919;675;455.5;1;True;True
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;0,0;Float;False;True;-1;2;ASEMaterialInspector;0;7;Transparent/Particles (Alpha Blended);0b6a9f8b4f707c74ca64c0be8e590de0;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;True;2;5;False;-1;10;False;-1;4;1;False;-1;1;False;-1;False;False;False;False;False;False;False;False;True;2;False;-1;True;True;True;True;True;0;False;-1;False;False;False;False;True;2;False;-1;True;3;False;-1;False;True;4;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;0;0;;0;0;Standard;0;0;1;True;False;;False;0
+-1408;247.3333;1350;919;675;452.5;1;True;True
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;0,0;Float;False;True;-1;2;ASEMaterialInspector;0;7;Super Reality/Overlays/Particles (Alpha Blended);0b6a9f8b4f707c74ca64c0be8e590de0;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;True;2;5;False;-1;10;False;-1;4;1;False;-1;1;False;-1;False;False;False;False;False;False;False;False;True;2;False;-1;True;True;True;True;True;0;False;-1;False;False;False;False;True;2;False;-1;True;3;False;-1;False;True;4;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;0;0;;0;0;Standard;0;0;1;True;False;;False;0
 ASEEND*/
-//CHKSM=20D8E03E83F03F791A90D4CD7EB6AF448635429F
+//CHKSM=B94AE29BE4AE101DA4C40E1AE4A1B30C2E80BE9A

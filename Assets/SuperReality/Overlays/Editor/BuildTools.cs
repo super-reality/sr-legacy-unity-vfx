@@ -4,11 +4,11 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
-namespace SuperReality.Scripts.Editor
+namespace SuperReality.Overlays.Editor
 {
-    public class BuildTools
+    public static class BuildTools
     {
-        [MenuItem("Super Reality/Build Selected Overlays")]
+        [MenuItem("Super Reality/Overlays/Build Selected")]
         public static void BuildSelectedScenes()
         {
             var selection = Selection.objects;

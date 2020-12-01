@@ -1,11 +1,26 @@
 ﻿using System;
 
-namespace SuperReality.Scripts
+namespace SuperReality.Overlays
 {
     [Serializable]
     public class Overlay
     {
-        public string displayName;
+        public string name;
         public string[] tags;
+        public Parameter[] parameters;
+        public Action[] actions;
+
+        [Serializable]
+        public class Action
+        {
+            public string name;
+        }
+
+        [Serializable]
+        public class Parameter
+        {
+            public string name;
+            public string type;
+        }
     }
 }

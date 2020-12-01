@@ -10,14 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a752ca843918483e9c043462e446bd34, type: 3}
-  m_Name: TestOverlay
+  m_Name: Hyperspace
   m_EditorClassIdentifier: 
-  displayName: Test
-  buildName: Test
+  displayName: Hyperspace
+  buildName: Hyperspace
   tags:
-  - {fileID: 11400000, guid: 83be6778323a41b4fbdd7e3cb8c83e4f, type: 2}
   - {fileID: 11400000, guid: 4e119cfce0077bf4cac55da989b5b20b, type: 2}
   - {fileID: 11400000, guid: a25545ae269a8204e90e6c4c1ce4d102, type: 2}
+  - {fileID: 11400000, guid: 83be6778323a41b4fbdd7e3cb8c83e4f, type: 2}
+  - {fileID: 11400000, guid: 1bc6a2e393ba9734f8ef66f94d413f57, type: 2}
   scenes:
   - sceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
-    scenePath: Assets/SuperReality/Content/Overlays/TestOverlayScene.unity
+    scenePath: Assets/SuperReality/Content/Overlays/Hyperspace.unity
+  parameters: []
+  actions:
+  - name: Start
+  - name: Stop
