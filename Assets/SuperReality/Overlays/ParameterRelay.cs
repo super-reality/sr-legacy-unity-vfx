@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 namespace SuperReality.Overlays
 {
@@ -9,18 +7,9 @@ namespace SuperReality.Overlays
         [SerializeField]
         private string parameterName;
 
-        [SerializeField]
-        private ParameterEvent onParameterSet;
-
         public string ParameterName => parameterName;
 
-        public void SetParameter(TValue value)
-        {
-            onParameterSet.Invoke(value);
-        }
-
-        [Serializable]
-        public class ParameterEvent : UnityEvent<TValue>
+        public virtual void SetParameter(TValue value)
         {
         }
     }
