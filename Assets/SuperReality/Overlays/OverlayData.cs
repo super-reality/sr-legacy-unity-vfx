@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SuperReality.Tags;
+using UnityEditor;
 using UnityEngine;
 
 namespace SuperReality.Overlays
@@ -24,6 +25,7 @@ namespace SuperReality.Overlays
         {
             var overlay = new Overlay
             {
+                id = new Guid(AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(this))).ToString(),
                 name = displayName,
                 tags = new string[tags.Count],
                 parameters = new Overlay.Parameter[parameters.Count],

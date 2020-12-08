@@ -5,6 +5,7 @@ namespace SuperReality.Overlays
     [Serializable]
     public class Overlay
     {
+        public string id;
         public string name;
         public string[] tags;
         public Parameter[] parameters;
