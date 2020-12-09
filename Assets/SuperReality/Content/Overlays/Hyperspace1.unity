@@ -186,15 +186,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800726, guid: d49c03966d490094eb0dca85786549a5, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19825596, guid: d49c03966d490094eb0dca85786549a5, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19828302, guid: d49c03966d490094eb0dca85786549a5, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19864752, guid: d49c03966d490094eb0dca85786549a5, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19864752, guid: d49c03966d490094eb0dca85786549a5, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d49c03966d490094eb0dca85786549a5, type: 3}

@@ -399,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19808126, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19810798, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: playOnAwake
@@ -415,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19823924, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19836718, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19836718, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19850122, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
@@ -439,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19850122, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19878862, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: playOnAwake
@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19880944, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19896504, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
@@ -459,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19896504, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a4c8883e31ba19488c7b525deb6c936, type: 3}
