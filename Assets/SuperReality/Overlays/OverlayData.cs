@@ -9,6 +9,8 @@ namespace SuperReality.Overlays
     [CreateAssetMenu(fileName = "New Overlay Data", menuName = "Super Reality/Overlay Data", order = -1000)]
     public class OverlayData : ScriptableObject
     {
+        public string id;
+
         public string displayName;
 
         public string buildName;
@@ -25,7 +27,7 @@ namespace SuperReality.Overlays
         {
             var overlay = new Overlay
             {
-                id = new Guid(AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(this))).ToString(),
+                id = id,
                 name = displayName,
                 tags = new string[tags.Count],
                 parameters = new Overlay.Parameter[parameters.Count],

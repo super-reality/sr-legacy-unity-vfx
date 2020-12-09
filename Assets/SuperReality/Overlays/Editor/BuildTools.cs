@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
@@ -42,6 +43,8 @@ namespace SuperReality.Overlays.Editor
         private static bool BuildOverlay(OverlayData overlay)
         {
             Debug.Log($"Building overlay '{overlay.displayName}'");
+
+            overlay.id = new Guid(AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(overlay))).ToString();
 
             var buildPath = Path.Combine("Builds", overlay.buildName);
 
