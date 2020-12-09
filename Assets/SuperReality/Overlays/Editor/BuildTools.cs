@@ -44,7 +44,10 @@ namespace SuperReality.Overlays.Editor
         {
             Debug.Log($"Building overlay '{overlay.displayName}'");
 
-            overlay.id = new Guid(AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(overlay))).ToString();
+            if(!Guid.TryParse(overlay.id, out _))
+            {
+                overlay.id = new Guid(AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(overlay))).ToString();
+            }
 
             var buildPath = Path.Combine("Builds", overlay.buildName);
 
