@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a752ca843918483e9c043462e446bd34, type: 3}
+  m_Name: Electricity1
+  m_EditorClassIdentifier: 
+  id: 
+  displayName: Electricity 1
+  buildName: Electricity1
+  tags:
+  - {fileID: 11400000, guid: b69018ee83d80ea4fbfde2945e9cbc0a, type: 2}
+  scenes:
+  - sceneAsset: {fileID: 102900000, guid: 80eba316d7aa25d4aa5fc63d11bc6674, type: 3}
+    scenePath: Assets/SuperReality/Content/Overlays/Electricity1.unity
+  parameters: []
+  actions:
+  - name: Start
+  - name: Stop
