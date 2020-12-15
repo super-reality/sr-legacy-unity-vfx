@@ -211,7 +211,18 @@ MonoBehaviour:
   actionName: Stop
   onActionReceived:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4469163281159395129}
+        m_MethodName: UpdateActionLog
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stop
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &134404306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +238,18 @@ MonoBehaviour:
   actionName: Start
   onActionReceived:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4469163281159395129}
+        m_MethodName: UpdateActionLog
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Start
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &134404307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +666,26 @@ PrefabInstance:
     - target: {fileID: 3196509283997119755, guid: a60ab4bee68ecf449904c3bf36ef29df,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876420899610605843, guid: a60ab4bee68ecf449904c3bf36ef29df,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876420900308224445, guid: a60ab4bee68ecf449904c3bf36ef29df,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122667507436452341, guid: a60ab4bee68ecf449904c3bf36ef29df,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122667508955498843, guid: a60ab4bee68ecf449904c3bf36ef29df,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -19,13 +19,56 @@
         <script src="%UNITY_WEBGL_LOADER_URL%"></script>
         <script>
             (() => {
+                window.SuperReality = {
+                    isLoaded: false,
+                    messageBuffer: []
+                }
+
                 const progress = (unityInstance, progress) => undefined;
                 const unityInstance = UnityLoader.instantiate("unity", "%UNITY_WEBGL_BUILD_URL%",{onProgress: progress});
-                const setParameter = (type, name, value) => unityInstance.SendMessage("OverlayManager", `Set${type}Parameter`, JSON.stringify({name, value}));
-                const runAction = name => unityInstance.SendMessage("OverlayManager", "RunAction", name);
+
+                const bufferMessage = (gameObject, method, argument) =>{
+                    const messageBuffer = SuperReality.messageBuffer;
+                    if(SuperReality.isLoaded) {
+                        unityInstance.SendMessage(gameObject, method, argument);
+                    }
+                    else {
+                        const message = {gameObject, method, argument};
+                        console.log("Buffering message: ", message);
+                        messageBuffer.push(message);
+                    }
+                }
+
+                const sendBufferedMessages = () => {
+                    SuperReality.isLoaded = true;
+                    const messageBuffer = SuperReality.messageBuffer;
+                    if(messageBuffer.length > 0) {
+                        console.log(`Found ${messageBuffer.length} buffered ${messageBuffer.length === 1 ? "message" : "messages"}`);
+                        messageBuffer.forEach(message => {
+                            console.log("Sending buffered message", message);
+                            unityInstance.SendMessage(message.gameObject, message.method, message.argument);
+                        });
+                    }
+                    else {
+                        console.log(`No messages buffered`);
+                    }
+                }
+
+                const setParameter = (type, name, value) => bufferMessage("OverlayManager", `Set${type}Parameter`, JSON.stringify({name, value}));
+                const runAction = name => bufferMessage("OverlayManager", "RunAction", name);
+
                 window.addEventListener("message", event => {
+                    console.log("Message received: ", event.data);
                     const {type, payload} = event.data;
                     switch(type) {
+                        // {
+                        //   type: "SEND_BUFFERED_MESSAGES"
+                        //   payload: {
+                        //   }
+                        // }
+                        case "SEND_BUFFERED_MESSAGES":
+                            sendBufferedMessages();
+                            break;
                         // {
                         //   type: "SET_BOOL_PARAMETER",
                         //   payload: {

@@ -36,6 +36,10 @@ window.postMessage(
 )
 ```
 
+Once the DOM is ready, messages can be received and processed, even while Unity loads.
+
+Messages received while Unity loads are buffered, then sent in the order received. 
+
 ### Parameters
 
 Payload structure
