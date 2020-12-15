@@ -46,6 +46,7 @@ namespace SuperReality.Overlays
             {
                 if (!relayCache.ContainsKey(relay.ActionName))
                 {
+                    Debug.Log($"Found action relay: {relay.ActionName}");
                     relayCache.Add(relay.ActionName, new List<ActionRelay>());
                 }
                 relayCache[relay.ActionName].Add(relay);
@@ -59,6 +60,7 @@ namespace SuperReality.Overlays
             {
                 if (!relayCache.ContainsKey(relay.ParameterName))
                 {
+                    Debug.Log($"Found parameter relay: {relay.ParameterName}");
                     relayCache.Add(relay.ParameterName, new List<TRelay>());
                 }
                 relayCache[relay.ParameterName].Add(relay);

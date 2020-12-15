@@ -21,7 +21,7 @@
             (() => {
                 const progress = (unityInstance, progress) => undefined;
                 const unityInstance = UnityLoader.instantiate("unity", "%UNITY_WEBGL_BUILD_URL%",{onProgress: progress});
-                const setParameter = (type, name, value) => unityInstance.SendMessage("OverlayManager", `Set${parameter}Parameter`, JSON.stringify({name, value}));
+                const setParameter = (type, name, value) => unityInstance.SendMessage("OverlayManager", `Set${type}Parameter`, JSON.stringify({name, value}));
                 const runAction = name => unityInstance.SendMessage("OverlayManager", "RunAction", name);
                 window.addEventListener("message", event => {
                     const {type, payload} = event.data;
@@ -34,7 +34,7 @@
                         //   }
                         // }
                         case "SET_BOOL_PARAMETER":
-                            setParameter("Bool", payload.name, payload.data);
+                            setParameter("Bool", payload.name, payload.value);
                             break;
                         // {
                         //   type: "SET_INT_PARAMETER",
@@ -44,7 +44,7 @@
                         //   }
                         // }
                         case "SET_INT_PARAMETER":
-                            setParameter("Int", payload.name, payload.data);
+                            setParameter("Int", payload.name, payload.value);
                             break;
                         // {
                         //   type: "SET_FLOAT_PARAMETER",
@@ -54,7 +54,7 @@
                         //   }
                         // }
                         case "SET_FLOAT_PARAMETER":
-                            setParameter("Float", payload.name, payload.data);
+                            setParameter("Float", payload.name, payload.value);
                             break;
                         // {
                         //   type: "SET_STRING_PARAMETER",
@@ -64,7 +64,7 @@
                         //   }
                         // }
                         case "SET_STRING_PARAMETER":
-                            setParameter("String", payload.name, payload.data);
+                            setParameter("String", payload.name, payload.value);
                             break;
                         // {
                         //   type: "SET_VECTOR2_PARAMETER",
@@ -77,7 +77,7 @@
                         //   }
                         // }
                         case "SET_VECTOR2_PARAMETER":
-                            setParameter("Vector2", payload.name, payload.data);
+                            setParameter("Vector2", payload.name, payload.value);
                             break;
                         // {
                         //   type: "SET_VECTOR3_PARAMETER",
@@ -91,7 +91,7 @@
                         //   }
                         // }
                         case "SET_VECTOR3_PARAMETER":
-                            setParameter("Vector3", payload.name, payload.data);
+                            setParameter("Vector3", payload.name, payload.value);
                             break;
                         // {
                         //   type: "SET_COLOR_PARAMETER",
@@ -106,7 +106,7 @@
                         //   }
                         // }
                         case "SET_COLOR_PARAMETER":
-                            setParameter("Color", payload.name, payload.data);
+                            setParameter("Color", payload.name, payload.value);
                             break;
                         // {
                         //   type: "SET_COLOR32_PARAMETER",
@@ -121,7 +121,7 @@
                         //   }
                         // }
                         case "SET_COLOR32_PARAMETER":
-                            setParameter("Color32", payload.name, payload.data);
+                            setParameter("Color32", payload.name, payload.value);
                             break;
                         // {
                         //   type: "RUN_ACTION",
