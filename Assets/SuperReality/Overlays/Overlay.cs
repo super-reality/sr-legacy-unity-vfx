@@ -7,6 +7,7 @@ namespace SuperReality.Overlays
     {
         public string id;
         public string name;
+        public string thumbnail;
         public string[] tags;
         public Parameter[] parameters;
         public Action[] actions;

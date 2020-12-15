@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using SuperReality.Tags;
 using UnityEditor;
 using UnityEngine;
@@ -9,11 +10,17 @@ namespace SuperReality.Overlays
     [CreateAssetMenu(fileName = "New Overlay Data", menuName = "Super Reality/Overlay Data", order = -1000)]
     public class OverlayData : ScriptableObject
     {
+        [HideInInspector]
         public string id;
 
         public string displayName;
 
         public string buildName;
+
+        public Texture2D thumbnail;
+
+        [HideInInspector]
+        public string thumbnailPath;
 
         public List<TagData> tags;
 
@@ -30,6 +37,7 @@ namespace SuperReality.Overlays
                 id = id,
                 name = displayName,
                 tags = new string[tags.Count],
+                thumbnail = thumbnailPath,
                 parameters = new Overlay.Parameter[parameters.Count],
                 actions = new Overlay.Action[actions.Count]
             };
