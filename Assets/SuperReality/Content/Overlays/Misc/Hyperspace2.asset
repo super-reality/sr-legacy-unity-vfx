@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a752ca843918483e9c043462e446bd34, type: 3}
-  m_Name: Hyperspace1
+  m_Name: Hyperspace2
   m_EditorClassIdentifier: 
-  displayName: Hyperspace (Blue)
-  buildName: Hyperspace1
+  id: 
+  displayName: Hyperspace (Purple)
+  buildName: Hyperspace2
   tags:
-  - {fileID: 11400000, guid: 4e119cfce0077bf4cac55da989b5b20b, type: 2}
+  - {fileID: 11400000, guid: cfaa00cd463c2004e85f429d761aa20c, type: 2}
   - {fileID: 11400000, guid: a25545ae269a8204e90e6c4c1ce4d102, type: 2}
   - {fileID: 11400000, guid: 83be6778323a41b4fbdd7e3cb8c83e4f, type: 2}
   - {fileID: 11400000, guid: 1bc6a2e393ba9734f8ef66f94d413f57, type: 2}
   scenes:
-  - sceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
-    scenePath: Assets/SuperReality/Content/Overlays/Hyperspace1.unity
-  parameters:
-  - name: Clear Color
-    type: 7
+  - sceneAsset: {fileID: 102900000, guid: ce8b6b46da2baa844971987ba4ee8e4c, type: 3}
+    scenePath: Assets/SuperReality/Content/Overlays/Misc/Hyperspace2.unity
+  parameters: []
   actions:
   - name: Start
   - name: Stop

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a752ca843918483e9c043462e446bd34, type: 3}
   m_Name: Hyperspace3
   m_EditorClassIdentifier: 
+  id: 
   displayName: Hyperspace (Cyan/Magenta)
   buildName: Hyperspace3
   tags:
@@ -24,7 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c2fa3eeebea65b458132657b22336e4, type: 2}
   scenes:
   - sceneAsset: {fileID: 102900000, guid: 2b99d941d2de6234fb12cf5a4e41cb4d, type: 3}
-    scenePath: Assets/SuperReality/Content/Overlays/Hyperspace3.unity
+    scenePath: Assets/SuperReality/Content/Overlays/Misc/Hyperspace3.unity
   parameters:
   - name: Main Color
     type: 7

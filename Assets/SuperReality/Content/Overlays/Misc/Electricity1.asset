@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b69018ee83d80ea4fbfde2945e9cbc0a, type: 2}
   scenes:
   - sceneAsset: {fileID: 102900000, guid: 80eba316d7aa25d4aa5fc63d11bc6674, type: 3}
-    scenePath: Assets/SuperReality/Content/Overlays/Electricity1.unity
+    scenePath: Assets/SuperReality/Content/Overlays/Misc/Electricity1.unity
   parameters: []
   actions:
   - name: Start
