@@ -10,19 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a752ca843918483e9c043462e446bd34, type: 3}
-  m_Name: Retro
+  m_Name: Disco1
   m_EditorClassIdentifier: 
-  id: test
-  displayName: Retro Background
-  buildName: Retro
+  id: 
+  displayName: Disco 1
+  buildName: Disco1
   tags:
+  - {fileID: 11400000, guid: 4e119cfce0077bf4cac55da989b5b20b, type: 2}
   - {fileID: 11400000, guid: 83be6778323a41b4fbdd7e3cb8c83e4f, type: 2}
   - {fileID: 11400000, guid: a148f4f6bbbd2204487669f9ec710056, type: 2}
   - {fileID: 11400000, guid: 1bc6a2e393ba9734f8ef66f94d413f57, type: 2}
+  - {fileID: 11400000, guid: 8afbc8e1d4626284c830d38a7e570929, type: 2}
   - {fileID: 11400000, guid: aee4856729a94464dbc029b6cb748070, type: 2}
   scenes:
-  - sceneAsset: {fileID: 102900000, guid: 53fd3fafa3131a746a37323ab5f11406, type: 3}
-    scenePath: Assets/SuperReality/Content/Overlays/Particle Backgrounds/Retro.unity
+  - sceneAsset: {fileID: 102900000, guid: f714235ae5be448469a16007b469858e, type: 3}
+    scenePath: Assets/SuperReality/Content/Overlays/Particle Backgrounds/Disco1.unity
   parameters: []
   actions:
   - name: Start

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Retro
-  m_Shader: {fileID: 4800000, guid: b0190b48f577ec743b8b7afa2196d40e, type: 3}
+  m_Shader: {fileID: 4800000, guid: e44b637be9727dd46bdd262d9c4ce367, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _COLORADDSUBDIFF_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0

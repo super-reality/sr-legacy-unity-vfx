@@ -10,7 +10,7 @@ Material:
   m_Name: Achievement
   m_Shader: {fileID: 4800000, guid: e44b637be9727dd46bdd262d9c4ce367, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _COLORCOLOR_ON
-  m_LightmapFlags: 0
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1

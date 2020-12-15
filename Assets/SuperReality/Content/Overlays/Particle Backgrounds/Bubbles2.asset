@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a752ca843918483e9c043462e446bd34, type: 3}
-  m_Name: Retro
+  m_Name: Bubbles2
   m_EditorClassIdentifier: 
-  id: test
-  displayName: Retro Background
-  buildName: Retro
+  id: 
+  displayName: Bubbles 2
+  buildName: Bubbles2
   tags:
+  - {fileID: 11400000, guid: f97c7d99ecc590b41b72687325e8ac9c, type: 2}
   - {fileID: 11400000, guid: 83be6778323a41b4fbdd7e3cb8c83e4f, type: 2}
-  - {fileID: 11400000, guid: a148f4f6bbbd2204487669f9ec710056, type: 2}
   - {fileID: 11400000, guid: 1bc6a2e393ba9734f8ef66f94d413f57, type: 2}
-  - {fileID: 11400000, guid: aee4856729a94464dbc029b6cb748070, type: 2}
   scenes:
-  - sceneAsset: {fileID: 102900000, guid: 53fd3fafa3131a746a37323ab5f11406, type: 3}
-    scenePath: Assets/SuperReality/Content/Overlays/Particle Backgrounds/Retro.unity
+  - sceneAsset: {fileID: 102900000, guid: de6d607854440e24b99f23916820165c, type: 3}
+    scenePath: Assets/SuperReality/Content/Overlays/Particle Backgrounds/Bubbles2.unity
   parameters: []
   actions:
   - name: Start
