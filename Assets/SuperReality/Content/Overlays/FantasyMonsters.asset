@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a752ca843918483e9c043462e446bd34, type: 3}
+  m_Name: FantasyMonsters
+  m_EditorClassIdentifier: 
+  id: be912768-549b-3e84-9918-0ece0294eb5d
+  displayName: Fantasy Monsters
+  buildName: FantasyMonters
+  tags: []
+  scenes:
+  - sceneAsset: {fileID: 102900000, guid: 19d3ecdd0076f9546968d9ebe8c56680, type: 3}
+    scenePath: Assets/SuperReality/Content/Overlays/FantasyMonsters.unity
+  parameters: []
+  actions:
+  - name: Attack
