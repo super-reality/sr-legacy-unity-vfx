@@ -35,6 +35,11 @@ namespace Assets.FantasyMonsters.Scripts
             GetComponent<LayerManager>().SetSortingGroupOrder((int) -transform.localPosition.y);
         }
 
+        public void ChangeState(MonsterState state)
+        {
+            SetState(state);
+        }
+
         /// <summary>
         /// Set animation parameter State to control transitions. Play different state animations (except Attack).
         /// </summary>
