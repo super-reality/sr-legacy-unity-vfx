@@ -70,12 +70,28 @@ namespace SuperReality.Overlays.Editor
 
             if (summary.result == BuildResult.Succeeded)
             {
-                Debug.Log($"Successfully built overlay '{overlay.displayName}'");
+                if (overlay.thumbnail)
+                {
+                    var thumbnailAssetPath = AssetDatabase.GetAssetPath(overlay.thumbnail);
+                    var thumbnailAssetExtension = Path.GetExtension(thumbnailAssetPath);
+                    var thumbnailOutputName = $"thumbnail{thumbnailAssetExtension}";
+                    var thumbnailOutputPath = Path.Combine(buildPath, thumbnailOutputName);
+                    Debug.Log($"Copying /{thumbnailOutputName} for overlay '{overlay.displayName}'");
+                    FileUtil.CopyFileOrDirectory(thumbnailAssetPath, thumbnailOutputPath);
+                    overlay.thumbnailPath = thumbnailOutputName;
+                }
+                else
+                {
+                    Debug.Log($"No thumbnail for overlay '{overlay.displayName}'");
+                }
 
+                Debug.Log($"Writing /data.json for overlay '{overlay.displayName}'");
                 using (var streamWriter = File.CreateText(Path.Combine(buildPath, "data.json")))
                 {
                     streamWriter.Write(overlay.GetJson());
                 }
+
+                Debug.Log($"Successfully built overlay '{overlay.displayName}'");
 
                 success = true;
             }
