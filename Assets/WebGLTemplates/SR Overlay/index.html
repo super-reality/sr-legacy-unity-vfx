@@ -18,8 +18,166 @@
         <div id="unity"></div>
         <script src="%UNITY_WEBGL_LOADER_URL%"></script>
         <script>
-            const progress = (unityInstance, progress) => undefined;
-            const unityInstance = UnityLoader.instantiate("unity", "%UNITY_WEBGL_BUILD_URL%",{onProgress: progress});
+            (() => {
+                window.SuperReality = {
+                    isLoaded: false,
+                    messageBuffer: []
+                }
+
+                const progress = (unityInstance, progress) => undefined;
+                const unityInstance = UnityLoader.instantiate("unity", "%UNITY_WEBGL_BUILD_URL%",{onProgress: progress});
+
+                const bufferMessage = (gameObject, method, argument) =>{
+                    const messageBuffer = SuperReality.messageBuffer;
+                    if(SuperReality.isLoaded) {
+                        unityInstance.SendMessage(gameObject, method, argument);
+                    }
+                    else {
+                        const message = {gameObject, method, argument};
+                        console.log("Buffering message: ", message);
+                        messageBuffer.push(message);
+                    }
+                }
+
+                const sendBufferedMessages = () => {
+                    SuperReality.isLoaded = true;
+                    const messageBuffer = SuperReality.messageBuffer;
+                    if(messageBuffer.length > 0) {
+                        console.log(`Found ${messageBuffer.length} buffered ${messageBuffer.length === 1 ? "message" : "messages"}`);
+                        messageBuffer.forEach(message => {
+                            console.log("Sending buffered message", message);
+                            unityInstance.SendMessage(message.gameObject, message.method, message.argument);
+                        });
+                    }
+                    else {
+                        console.log(`No messages buffered`);
+                    }
+                }
+
+                const setParameter = (type, name, value) => bufferMessage("OverlayManager", `Set${type}Parameter`, JSON.stringify({name, value}));
+                const runAction = name => bufferMessage("OverlayManager", "RunAction", name);
+
+                window.addEventListener("message", event => {
+                    console.log("Message received: ", event.data);
+                    const {type, payload} = event.data;
+                    switch(type) {
+                        // {
+                        //   type: "SEND_BUFFERED_MESSAGES"
+                        //   payload: {
+                        //   }
+                        // }
+                        case "SEND_BUFFERED_MESSAGES":
+                            sendBufferedMessages();
+                            break;
+                        // {
+                        //   type: "SET_BOOL_PARAMETER",
+                        //   payload: {
+                        //     name: "Parameter Name",
+                        //     value: false
+                        //   }
+                        // }
+                        case "SET_BOOL_PARAMETER":
+                            setParameter("Bool", payload.name, payload.value);
+                            break;
+                        // {
+                        //   type: "SET_INT_PARAMETER",
+                        //   payload: {
+                        //     name: "Parameter Name",
+                        //     value: 0
+                        //   }
+                        // }
+                        case "SET_INT_PARAMETER":
+                            setParameter("Int", payload.name, payload.value);
+                            break;
+                        // {
+                        //   type: "SET_FLOAT_PARAMETER",
+                        //   payload: {
+                        //     name: "Parameter Name",
+                        //     value: 0.0
+                        //   }
+                        // }
+                        case "SET_FLOAT_PARAMETER":
+                            setParameter("Float", payload.name, payload.value);
+                            break;
+                        // {
+                        //   type: "SET_STRING_PARAMETER",
+                        //   payload: {
+                        //     name: "Parameter Name",
+                        //     value: ""
+                        //   }
+                        // }
+                        case "SET_STRING_PARAMETER":
+                            setParameter("String", payload.name, payload.value);
+                            break;
+                        // {
+                        //   type: "SET_VECTOR2_PARAMETER",
+                        //   payload: {
+                        //     name: "Parameter Name",
+                        //     value: {
+                        //       x: 0.0,
+                        //       y: 0.0
+                        //     }
+                        //   }
+                        // }
+                        case "SET_VECTOR2_PARAMETER":
+                            setParameter("Vector2", payload.name, payload.value);
+                            break;
+                        // {
+                        //   type: "SET_VECTOR3_PARAMETER",
+                        //   payload: {
+                        //     name: "Parameter Name",
+                        //     value: {
+                        //       x: 0.0,
+                        //       y: 0.0,
+                        //       z: 0.0
+                        //     }
+                        //   }
+                        // }
+                        case "SET_VECTOR3_PARAMETER":
+                            setParameter("Vector3", payload.name, payload.value);
+                            break;
+                        // {
+                        //   type: "SET_COLOR_PARAMETER",
+                        //   payload: {
+                        //     name: "Parameter Name",
+                        //     value: {
+                        //       r: 0.0,
+                        //       g: 0.0,
+                        //       b: 0.0,
+                        //       a: 0.0
+                        //     }
+                        //   }
+                        // }
+                        case "SET_COLOR_PARAMETER":
+                            setParameter("Color", payload.name, payload.value);
+                            break;
+                        // {
+                        //   type: "SET_COLOR32_PARAMETER",
+                        //   payload: {
+                        //     name: "Parameter Name",
+                        //     value: {
+                        //       r: 0,
+                        //       g: 0,
+                        //       b: 0,
+                        //       a: 0
+                        //     }
+                        //   }
+                        // }
+                        case "SET_COLOR32_PARAMETER":
+                            setParameter("Color32", payload.name, payload.value);
+                            break;
+                        // {
+                        //   type: "RUN_ACTION",
+                        //   payload: {
+                        //     name: "Parameter Name"
+                        //   }
+                        // }
+                        case "RUN_ACTION":
+                            runAction(payload.name);
+                            break;
+                    }
+                });
+            })()
         </script>
     </body>
 </html>
