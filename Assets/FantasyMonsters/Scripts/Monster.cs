@@ -15,7 +15,7 @@ namespace Assets.FantasyMonsters.Scripts
         public Animator Animator;
         public bool Variations;
         public event Action<string> OnEvent = eventName => { };
-        
+
         /// <summary>
         /// Called on Awake.
         /// </summary>
@@ -32,12 +32,12 @@ namespace Assets.FantasyMonsters.Scripts
                 }
             }
 
-            GetComponent<LayerManager>().SetSortingGroupOrder((int) -transform.localPosition.y);
+            GetComponent<LayerManager>().SetSortingGroupOrder((int)-transform.localPosition.y);
         }
 
-        public void ChangeState(MonsterState state)
+        public void ChangeState(int num)
         {
-            SetState(state);
+            Animator.SetInteger("State", num);
         }
 
         /// <summary>
