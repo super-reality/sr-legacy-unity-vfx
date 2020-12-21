@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace SuperReality.Overlays
@@ -23,6 +24,9 @@ namespace SuperReality.Overlays
 
         private readonly Dictionary<string, List<Color32ParameterRelay>> m_color32Relays = new Dictionary<string, List<Color32ParameterRelay>>();
 
+        [DllImport("__Internal")]
+        private static extern void SendBufferedMessages();
+
         private void Awake()
         {
             // TODO: read window.SuperReality preload data
@@ -37,6 +41,8 @@ namespace SuperReality.Overlays
             CacheParameterRelays<Vector3, Vector3ParameterRelay>(m_vector3Relays);
             CacheParameterRelays<Color, ColorParameterRelay>(m_colorRelays);
             CacheParameterRelays<Color32, Color32ParameterRelay>(m_color32Relays);
+
+            SendBufferedMessages();
         }
 
         private void CacheActionRelays(Dictionary<string, List<ActionRelay>> relayCache)
@@ -46,6 +52,7 @@ namespace SuperReality.Overlays
             {
                 if (!relayCache.ContainsKey(relay.ActionName))
                 {
+                    Debug.Log($"Found action relay: {relay.ActionName}");
                     relayCache.Add(relay.ActionName, new List<ActionRelay>());
                 }
                 relayCache[relay.ActionName].Add(relay);
@@ -59,6 +66,7 @@ namespace SuperReality.Overlays
             {
                 if (!relayCache.ContainsKey(relay.ParameterName))
                 {
+                    Debug.Log($"Found parameter relay: {relay.ParameterName}");
                     relayCache.Add(relay.ParameterName, new List<TRelay>());
                 }
                 relayCache[relay.ParameterName].Add(relay);
