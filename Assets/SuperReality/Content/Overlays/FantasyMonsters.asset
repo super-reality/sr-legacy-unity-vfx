@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Fantasy Monsters
   buildName: FantasyMonters
   thumbnail: {fileID: 2800000, guid: b84a4a65f1592134b9d8198feba7ab09, type: 3}
-  thumbnailPath: 
+  thumbnailPath: thumbnail.png
   tags: []
   scenes:
   - sceneAsset: {fileID: 102900000, guid: 19d3ecdd0076f9546968d9ebe8c56680, type: 3}
@@ -24,5 +24,10 @@ MonoBehaviour:
   parameters:
   - name: AnimationState
     type: 2
+  - name: ChangeMonsters
+    type: 2
+  - name: ChangeColor
+    type: 8
   actions:
   - name: Attack
+  - name: CallDeath
