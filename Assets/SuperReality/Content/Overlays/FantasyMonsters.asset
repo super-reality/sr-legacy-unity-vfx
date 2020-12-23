@@ -24,10 +24,8 @@ MonoBehaviour:
   parameters:
   - name: AnimationState
     type: 2
-  - name: ChangeMonsters
+  - name: ChangeMonster
     type: 2
-  - name: ChangeColor
-    type: 8
   actions:
   - name: Attack
   - name: CallDeath
