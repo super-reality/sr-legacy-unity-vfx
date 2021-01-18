@@ -4,3 +4,15 @@ Assets/Rainbow[[:space:]]Magic/**/*.wav filter=lfs diff=lfs merge=lfs -text
 Assets/Rainbow[[:space:]]Magic/**/*.png filter=lfs diff=lfs merge=lfs -text
 Assets/Rainbow[[:space:]]Magic/**/*.FBX filter=lfs diff=lfs merge=lfs -text
 Assets/Hyperspace[[:space:]]FX/**/*.png filter=lfs diff=lfs merge=lfs -text
+Assets/Particle[[:space:]]Logo[[:space:]]FX/Textures/lensflare.png filter=lfs diff=lfs merge=lfs -text
+Assets/Particle[[:space:]]Logo[[:space:]]FX/Textures/lightning_2x2.png filter=lfs diff=lfs merge=lfs -text
+Assets/Particle[[:space:]]Logo[[:space:]]FX/Textures/sphere.png filter=lfs diff=lfs merge=lfs -text
+Assets/Particle[[:space:]]Logo[[:space:]]FX/Textures/sphereglow.png filter=lfs diff=lfs merge=lfs -text
+Assets/Particle[[:space:]]Logo[[:space:]]FX/Textures/waterdrops3x3.png filter=lfs diff=lfs merge=lfs -text
+diff=lfs filter=lfs diff=lfs merge=lfs -text
+merge=lfs filter=lfs diff=lfs merge=lfs -text
+Assets/Particle[[:space:]]Logo[[:space:]]FX/Textures/spheresoft.png filter=lfs diff=lfs merge=lfs -text
+filter=lfs filter=lfs diff=lfs merge=lfs -text
+Assets/Particle[[:space:]]Logo[[:space:]]FX/SFX/spop.mp3 filter=lfs diff=lfs merge=lfs -text
+Assets/Particle[[:space:]]Logo[[:space:]]FX/SFX/superrealityintro_01.mp3 filter=lfs diff=lfs merge=lfs -text
+filter-lfs filter=lfs diff=lfs merge=lfs -text
