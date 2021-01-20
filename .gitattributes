@@ -16,3 +16,6 @@ filter=lfs filter=lfs diff=lfs merge=lfs -text
 Assets/Particle[[:space:]]Logo[[:space:]]FX/SFX/spop.mp3 filter=lfs diff=lfs merge=lfs -text
 Assets/Particle[[:space:]]Logo[[:space:]]FX/SFX/superrealityintro_01.mp3 filter=lfs diff=lfs merge=lfs -text
 filter-lfs filter=lfs diff=lfs merge=lfs -text
+Assets/Clavian/**/*.png filter=lfs diff=lfs merge=lfs -text
+Assets/Clavian/**/*.wav filter=lfs diff=lfs merge=lfs -text
+Assets/Clavian/**/*.ttf filter=lfs diff=lfs merge=lfs -text
