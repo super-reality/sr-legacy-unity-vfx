@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b347e5d79dd1484ebedcac94b18f81d, type: 3}
   m_Name: SuperTextMeshData
   m_EditorClassIdentifier: 
-  textDataEditMode: 0
+  textDataEditMode: 1
   showEffectsFoldout: 0
   showWavesFoldout: 0
   showJittersFoldout: 0
@@ -25,9 +25,9 @@ MonoBehaviour:
   showDelaysFoldout: 0
   showVoicesFoldout: 0
   showFontsFoldout: 0
-  showSoundClipsFoldout: 0
+  showSoundClipsFoldout: 1
   showAudioClipsFoldout: 0
-  showQuadsFoldout: 1
+  showQuadsFoldout: 0
   showMaterialsFoldout: 0
   showAutomaticFoldout: 0
   showAutoClipsFoldout: 0

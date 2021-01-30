@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9ada15d036b479288f481d8aa0d939, type: 3}
   m_Name: redoutline
   m_EditorClassIdentifier: 
-  showFoldout: 1
+  showFoldout: 0
   material: {fileID: 2100000, guid: 9b9740acad85b1e4eb0b6bb8dc70ea95, type: 2}

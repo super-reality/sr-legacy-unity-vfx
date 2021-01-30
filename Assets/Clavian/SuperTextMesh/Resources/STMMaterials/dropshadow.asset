@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9ada15d036b479288f481d8aa0d939, type: 3}
   m_Name: dropshadow
   m_EditorClassIdentifier: 
-  showFoldout: 1
+  showFoldout: 0
   material: {fileID: 2100000, guid: 964bf810dd70245999567f6b0206ef95, type: 2}

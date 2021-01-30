@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0d5e84686d6439886d97dee7f26dc6, type: 3}
   m_Name: slimeCharacter
   m_EditorClassIdentifier: 
-  showFoldout: 1
-  texture: {fileID: 2800000, guid: e80de9bb481ff784095b8e58a7ba1cb3, type: 3}
+  showFoldout: 0
+  texture: {fileID: 2800000, guid: cc72665c4b1192d4a85692911e5b46f3, type: 3}
   silhouette: 0
   overrideFilterMode: 0
   filterMode: 1
-  columns: 1
-  rows: 2
+  columns: 2
+  rows: 1
   iconIndex: 0
-  animDelay: 0
-  frames: 
-  size: {x: 1, y: 1}
-  offset: {x: 0, y: 0, z: 0}
+  animDelay: 0.2
+  frames: 0000000001000000
+  size: {x: 1.25, y: 1.25}
+  offset: {x: 0, y: -0.31, z: 0}
   advance: 0
