@@ -14,8 +14,8 @@ public class STMManager_S : MonoBehaviour
 
     private void Start()
     {
-        //stmText.gameObject.SetActive(false);
-        //StartCoroutine(TurnTextOn());
+        stmText.gameObject.SetActive(false);
+        StartCoroutine(TurnTextOn());
     }
 
     IEnumerator TurnTextOn()
@@ -176,25 +176,58 @@ public class STMManager_S : MonoBehaviour
 
     public void SetItalic(string lookFor)
     {
-        if (stmText.text.Contains(lookFor))
+        if (lookFor == "*")
         {
-            if (stmText.text.Contains("<i>" + lookFor + "</i>"))
-                stmText.text = stmText.text.Replace("<i>" + lookFor + "</i>", lookFor);
+            if (stmText.text.Contains("<i>"))
+            {
+                stmText.text = stmText.text.Replace("<i>", "");
+
+                if (stmText.text.Contains("</i>"))
+                    stmText.text = stmText.text.Replace("</i>", "");
+            }
 
             else
-                stmText.text = stmText.text.Replace(lookFor, "<i>" + lookFor + "</i>");
+                stmText.text = "<i>" + stmText.text + "</i>";
+        }
+
+        else
+        {
+            if (stmText.text.Contains(lookFor))
+            {
+                if (stmText.text.Contains("<i>" + lookFor + "</i>"))
+                    stmText.text = stmText.text.Replace("<i>" + lookFor + "</i>", lookFor);
+
+                else
+                    stmText.text = stmText.text.Replace(lookFor, "<i>" + lookFor + "</i>");
+            }
         }
     }
 
     public void SetBold(string lookFor)
     {
-        if (stmText.text.Contains(lookFor))
+        if (lookFor == "*")
         {
-            if (stmText.text.Contains("<b>" + lookFor + "</b>"))
-                stmText.text = stmText.text.Replace("<b>" + lookFor + "</b>", lookFor);
+            if (stmText.text.Contains("<b>"))
+            {
+                stmText.text = stmText.text.Replace("<b>", "");
+
+                if (stmText.text.Contains("</b>"))
+                    stmText.text = stmText.text.Replace("</b>", "");
+            }
 
             else
-                stmText.text = stmText.text.Replace(lookFor, "<b>" + lookFor + "</b>");
+                stmText.text = "<b>" + stmText.text + "</b>";
+        }
+        else
+        {
+            if (stmText.text.Contains(lookFor))
+            {
+                if (stmText.text.Contains("<b>" + lookFor + "</b>"))
+                    stmText.text = stmText.text.Replace("<b>" + lookFor + "</b>", lookFor);
+
+                else
+                    stmText.text = stmText.text.Replace(lookFor, "<b>" + lookFor + "</b>");
+            }
         }
     }
 
@@ -211,5 +244,42 @@ public class STMManager_S : MonoBehaviour
     {
         stmText.size = size;
         stmText.text = stmText.text;
+    }
+
+    string[] options = new string[] { "<b>", "<i>", "<" };
+
+    void GetEffect(int id, string text)
+    {
+        SetEffect(text, id);
+    }
+
+    public void SetEffect(string lookFor, int id)
+    {
+        string temp = options[id].Insert(0, "/");
+
+        if (lookFor == options[id])
+        {
+            if (stmText.text.Contains(options[id]))
+            {
+                stmText.text = stmText.text.Replace(options[id], "");
+
+                if (stmText.text.Contains(temp))
+                    stmText.text = stmText.text.Replace(temp, "");
+            }
+
+            else
+                stmText.text = options[id] + stmText.text + temp;
+        }
+        else
+        {
+            if (stmText.text.Contains(lookFor))
+            {
+                if (stmText.text.Contains("<b>" + lookFor + "</b>"))
+                    stmText.text = stmText.text.Replace("<b>" + lookFor + "</b>", lookFor);
+
+                else
+                    stmText.text = stmText.text.Replace(lookFor, "<b>" + lookFor + "</b>");
+            }
+        }
     }
 }
